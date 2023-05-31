@@ -1,7 +1,6 @@
 ﻿int n = 0;
 while (n <= 0)
 {
-    // form validation
     Console.WriteLine("Please enter integer value greater than zero.");
     n = Int32.Parse(Console.ReadLine());
 }
