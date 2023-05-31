@@ -10,7 +10,7 @@ for (int i = 0; i < n; i++)
 {
     Console.WriteLine($"Enter word {i + 1}");
     string newWord = Console.ReadLine();
-    if (newWord.Length > 0 && newWord.Contains(' '))
+    if (newWord.Length > 0 && !newWord.Contains(' '))
     {
         words[i] = newWord.ToLower();
     }
@@ -44,9 +44,9 @@ foreach (string word in words)
 double percentage = charCount / totalArrLength;
 if (percentage >= 0.25)
 {
-    Console.WriteLine($"“The letter ‘{charToCount}’ appears {charCount} times in the array. This letter makes up more than 25% of the total number of characters.”");
+    Console.WriteLine($"The letter ‘{charToCount}’ appears {charCount} times in the array. This letter makes up more than 25% of the total number of characters.");
 }
 else
 {
-    Console.WriteLine($"“The letter ‘{charToCount}’ appears {charCount} times in the array.");
+    Console.WriteLine($"The letter ‘{charToCount}’ appears {charCount} times in the array.");
 }
