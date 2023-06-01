@@ -79,5 +79,7 @@ public sealed class Lab02
     }   
 }
 /*
- * StringBuilder has 
+    The advantage of StringBuilder over string in C# is that StringBuilder allows efficient 
+    manipulation and concatenation of strings without creating multiple intermediate string objects, 
+    resulting in improved performance and memory efficiency.   
  */
