@@ -5,7 +5,8 @@ public sealed class Lab02
 {
     static void Main()
     {
-        string example1 = "Programmatic Python";
+        // Program 1
+        /*string example1 = "Programmatic Python";
         int count = 0;
         string example1Words = "";
         for (int i = 0; i < example1.Length; i++)
@@ -25,24 +26,11 @@ public sealed class Lab02
             savedArray.Append(example1Words[i]);
         }
         Console.WriteLine("[" + string.Join(",", savedArray) + "]");
+        */
+        // Program 2
 
-        string input = "Programmatic Python";
-        List<char> result = new List<char>();
-
-        foreach (char c in input.ToLower())
-        {
-            if (Char.IsLower(c) && !result.Contains(c))
-            {
-                result.Add(c);
-            }
-        }
-
-        char[] arrayResult = result.ToArray();
-
-        Console.WriteLine("[\"" + string.Join("\", \"", result) + "\"]");
-
-        string typeString = "in";
-        string example2 = "Insured in that field";
+        string sortedWords = "";
+        string example2 = "To be or not to be";
         int len = 0;
         string words = "";
         int temp = 0;
@@ -51,22 +39,16 @@ public sealed class Lab02
             len++;
             if (example2[i] == ' ')
             {
-                if (len - 1 == typeString.Length)
+                words = example2.Substring(temp, len);
+                temp = len;
+                len = 0;
+                Console.WriteLine(words);   
+                if (!sortedWords.Contains(words))
                 {
-                    words = example2.Substring(temp, len - 1);
-                    Console.WriteLine(words);
-                    if (words == typeString)
-                    {
-                        words = example2.Substring(temp, example2.Length - i + 2);
-                    }
-                }
-                else
-                {
-                    temp = i + 1;
-                    len = 0;
+                    sortedWords += words;
                 }
             }
         }
-        Console.WriteLine(words);
+        
     }
 }
