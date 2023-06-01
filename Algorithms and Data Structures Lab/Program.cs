@@ -6,7 +6,9 @@ public sealed class Lab02
     static void Main()
     {
         // Program 1
-        /*string example1 = "Programmatic Python";
+        /*
+        Console.WriteLine("Program 1:");
+        string example1 = "Programmatic Python";
         int count = 0;
         string example1Words = "";
         for (int i = 0; i < example1.Length; i++)
@@ -28,27 +30,52 @@ public sealed class Lab02
         Console.WriteLine("[" + string.Join(",", savedArray) + "]");
         */
         // Program 2
-
+        
+        Console.WriteLine("Program 2:");
         string sortedWords = "";
         string example2 = "To be or not to be";
-        int len = 0;
-        string words = "";
-        int temp = 0;
-        for (int i = 0; i < example2.Length; i++)
+        string[] wordsArray = example2.ToLower().Split(' ');
+        StringBuilder getArray = new StringBuilder("", sortedWords.Length);
+        foreach (string word in wordsArray)
         {
-            len++;
-            if (example2[i] == ' ')
+            if (!sortedWords.Contains(word))
             {
-                words = example2.Substring(temp, len);
-                temp = len;
-                len = 0;
-                Console.WriteLine(words);   
-                if (!sortedWords.Contains(words))
-                {
-                    sortedWords += words;
-                }
+                sortedWords += word + " ";
             }
         }
         
-    }
+        for (int i = 0; i < sortedWords.Length; i++)
+        {
+            getArray.Append(sortedWords[i]);
+        }
+        Console.WriteLine(getArray);
+        
+        // Program 3
+        
+        Console.WriteLine("Program 3:");
+        string example3 = "Hello World";
+        StringBuilder reversedArray = new StringBuilder("", example3.Length);
+        for (int i = example3.Length - 1; i >= 0; i--) 
+        {
+            reversedArray.Append(example3[i]);
+        }
+        Console.WriteLine(reversedArray);    
+        
+        // Program 4
+        
+        Console.WriteLine("Program 4:");
+        string example4 = "Which one is the longest words in this sentence";
+        string[] longestWord = example4.Split(' ');
+        int length = 0;
+        int position = 0;
+        for (int i = 0; i < longestWord.Length - 1; i++) 
+        { 
+            if (longestWord[i].Length <= longestWord[i + 1].Length && length <= longestWord[i + 1].Length)
+            { 
+                length = longestWord[i + 1].Length;
+                position = i + 1;
+            }
+        }
+        Console.WriteLine(longestWord[position]);
+    }   
 }
