@@ -5,14 +5,14 @@ public sealed class Lab02
 {
     static void Main()
     {
-        string test = "Programmatic Python";
+        string test = "Programmatic Pythonasrbsn gggggggg43563 gg";
         int count = 0;
         string words = "";
         for (int i = 0; i < test.Length; i++)
         {
             for (int j = i + 1; j < test.Length; j++)
             {
-                if (test[i] == test[j])
+                if (test[i] == test[j] && Char.IsLetter(test[i]) && test[i] != ' ' && !words.Contains(test[i]))
                 {
                     count++;
                     words += test[j];
