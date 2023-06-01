@@ -6,7 +6,7 @@ public sealed class Lab02
     static void Main()
     {
         // Program 1
-        /*
+        
         Console.WriteLine("Program 1:");
         string example1 = "Programmatic Python";
         int count = 0;
@@ -28,7 +28,7 @@ public sealed class Lab02
             savedArray.Append(example1Words[i]);
         }
         Console.WriteLine("[" + string.Join(",", savedArray) + "]");
-        */
+        
         // Program 2
         
         Console.WriteLine("Program 2:");
@@ -43,7 +43,6 @@ public sealed class Lab02
                 sortedWords += word + " ";
             }
         }
-        
         for (int i = 0; i < sortedWords.Length; i++)
         {
             getArray.Append(sortedWords[i]);
@@ -79,3 +78,6 @@ public sealed class Lab02
         Console.WriteLine(longestWord[position]);
     }   
 }
+/*
+ * StringBuilder has 
+ */
