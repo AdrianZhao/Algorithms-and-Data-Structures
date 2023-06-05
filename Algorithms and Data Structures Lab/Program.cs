@@ -1,4 +1,6 @@
 ﻿// Program 1
+using System.Text;
+
 Console.WriteLine("Program 1:");
 int[] nums = new int[] { 1, 2, 3, 4, 7, 9, 2, 4 };
 List<int> duplicates = new List<int>();
@@ -9,12 +11,15 @@ foreach (int num in nums)
     if (nonDuplicates.Contains(num))
     {
         duplicates.Add(num);
-        Console.Write(num + ", ");
     }
     else
     {
         nonDuplicates.Add(num);
     }
+}
+foreach (int num in duplicates)
+{
+    Console.Write(num + " ");
 }
 Console.WriteLine();
 // Program 2
@@ -60,3 +65,10 @@ Console.WriteLine();
 Console.WriteLine("Program 3:");
 int myNum = 3415;
 string myString = myNum.ToString();
+StringBuilder reversedNum = new StringBuilder("", myString.Length);
+for (int l = myString.Length - 1; l >= 0; l--)
+{
+    reversedNum.Append(myString[l]);
+}
+Console.WriteLine(reversedNum);
+// The time complexity of my solution is O(n)
