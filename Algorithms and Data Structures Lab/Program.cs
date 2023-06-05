@@ -58,3 +58,5 @@ foreach (int num in merged)
 Console.WriteLine();
 // Program 3
 Console.WriteLine("Program 3:");
+int myNum = 3415;
+string myString = myNum.ToString();
