@@ -36,14 +36,12 @@ while (!exit)
     { 
         Console.WriteLine("Invalid option. Please try again."); 
     }
-    Console.WriteLine();
 }
 static void Add(Queue<string> nextSongs)
 {
     Console.Write("Enter Song Name: ");
     string songName = Console.ReadLine();
     nextSongs.Enqueue(songName);
-    Console.WriteLine();
     Console.WriteLine($"\"{songName}\" added to your playlist.");
 }
 static void PlayNext(Queue<string> nextSongs, Stack<string> previousSongs)
@@ -55,18 +53,15 @@ static void PlayNext(Queue<string> nextSongs, Stack<string> previousSongs)
         Console.WriteLine($"Now playing \"{songName}\"");
         if (nextSongs.Count > 0)
         {
-            Console.WriteLine();
             Console.WriteLine($"Next song: {nextSongs.Peek()}");
         }
         else
         {
-            Console.WriteLine();
             Console.WriteLine("Next song: none queued");
         }
     }
     else
     {
-        Console.WriteLine();
         Console.WriteLine("No songs in the playlist.");
     }
 }
@@ -75,22 +70,18 @@ static void SkipNext(Queue<string> nextSongs)
     if (nextSongs.Count > 0)
     {
         string skippedSong = nextSongs.Dequeue();
-        Console.WriteLine();
         Console.WriteLine($"Skipped song: \"{skippedSong}\"");
         if (nextSongs.Count > 0)
         {
-            Console.WriteLine();
             Console.WriteLine($"Next song: {nextSongs.Peek()}");
         }
         else
         {
-            Console.WriteLine();
             Console.WriteLine("Next song: none queued");
         }
     }
     else
     {
-        Console.WriteLine();
         Console.WriteLine("No songs in the playlist.");
     }
 }
@@ -100,12 +91,10 @@ static void Rewind(Queue<string> nextSongs, Stack<string> previousSongs)
     {
         string previousSong = previousSongs.Pop();
         nextSongs.Enqueue(previousSong);
-        Console.WriteLine();
         Console.WriteLine($"Rewinding to song: \"{previousSong}\"");
     }
     else
     {
-        Console.WriteLine();
         Console.WriteLine("No previous songs in the playlist.");
     }
 }
